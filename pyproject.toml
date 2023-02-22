@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "Distributed Systems GT Quickstarter"
+version = "1.0.0"
+description = "Used for quickly getting users setup on a virutal machine with all required tooling pre-installed."
+
+license = "MIT"
+
+authors = [
+    "Daniel Gleason <danielpgleason@icloud.com>"
+]
+
+repository = "https://github.com/python-poetry/poetry"
+
+readme = ["README.md"]
+
+[tool.poetry.dependencies]
+# Compatible Python versions
+python = ">=3.10"
+
+[tool.poetry.group.dev.dependencies]
+pyinstaller = "*"
+mypy = "*"
+pylint = "*"
+
+
+# Python-style entrypoints and scripts are easily expressed
+[tool.poetry.scripts]
+my-script = "main"
