@@ -7,6 +7,10 @@ from PySide2.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QH
 from vbox import get_vbox_manager
 
 
+# Path to the ova template filegit 
+TEMPLATE_PATH = Path.cwd() / 'template' / 'distributed_systems_template.ova'
+
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -40,8 +44,7 @@ class MainWindow(QMainWindow):
 
     def on_start_import_clicked(self) -> None:
         # if we wanted to improve this could just make a browse button to browse for the template.
-        template_path = Path.cwd() / 'template' / 'distributed_systems_template.ova'
-        self.import_thread = threading.Thread(target=get_vbox_manager().import_template, args=(template_path, self.start_button, self.progress_label))
+        self.import_thread = threading.Thread(target=get_vbox_manager().import_template, args=(TEMPLATE_PATH, self.start_button, self.progress_label))
         self.import_thread.start()
         self.start_button.setEnabled(False)
 
