@@ -2,8 +2,9 @@
 import sys
 from enum import Enum
 from functools import cache
-import shutil
 from pathlib import Path
+
+import shutil
 import subprocess
 import threading
 
